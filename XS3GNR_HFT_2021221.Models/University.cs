@@ -19,6 +19,10 @@ namespace XS3GNR_HFT_2021221.Models
             [Required]
             public string Name { get; set; }
 
+            [MaxLength(10)]
+            [Required]
+            public string ShortName { get; set; }
+
             [NotMapped]
             public virtual ICollection<Faculties> Faculties { get; set; }
 
