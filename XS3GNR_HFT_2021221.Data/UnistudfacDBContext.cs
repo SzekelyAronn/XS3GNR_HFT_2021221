@@ -64,22 +64,22 @@ namespace XS3GNR_HFT_2021221.Data
             Faculties elte1 = new Faculties() { Id = 7, ShortName = "ÁJK", Name = "Állam- és Jogtudományi Kar", UniId = ELTE.Id };
             Faculties elte2 = new Faculties() { Id = 8, ShortName = "BTK", Name = "Bölcsészettudományi Kar", UniId = ELTE.Id };
 
-            Students stud1 = new Students() { Name = "Fehér Dominik", NeptunId = "GV2OA1", FacultyId = oe1.Id };
-            Students stud2 = new Students() { Name = "Veres Árpád", NeptunId = "QAK0PS", FacultyId = oe1.Id };
-            Students stud3 = new Students() { Name = "Orsós Emese", NeptunId = "ATCH5I", FacultyId = oe2.Id };
-            Students stud4 = new Students() { Name = "Szabó Albert", NeptunId = "D3R6UK", FacultyId = oe2.Id };
-            Students stud5 = new Students() { Name = "Mészáros Fanni", NeptunId = "K7KJMR", FacultyId = bge1.Id };
-            Students stud6 = new Students() { Name = "Vass Laura", NeptunId = "ABD7HW", FacultyId = bge1.Id };
-            Students stud7 = new Students() { Name = "Szalai Zoltán", NeptunId = "B0IRV1", FacultyId = bge2.Id };
-            Students stud8 = new Students() { Name = "Molnár Viktória", NeptunId = "QORE45", FacultyId = bge2.Id };
-            Students stud9 = new Students() { Name = "Magyar András", NeptunId = "VB4KOV", FacultyId = bme1.Id };
-            Students stud10= new Students() { Name = "Papp Attila", NeptunId = "H116BR", FacultyId = bme1.Id };
-            Students stud11= new Students() { Name = "Fodor Sára", NeptunId = "WEDTH8", FacultyId = bme2.Id };
-            Students stud12= new Students() { Name = "Illés Dóra", NeptunId = "PMCDB6", FacultyId = bme2.Id };
-            Students stud13= new Students() { Name = "Nagy Viktor", NeptunId = "G05YV8", FacultyId = elte1.Id};
-            Students stud14= new Students() { Name = "Szőke Tamás", NeptunId = "SW5XP8", FacultyId = elte1.Id};
-            Students stud15= new Students() { Name = "Gál Nikoletta", NeptunId = "AK45OF", FacultyId = elte2.Id};
-            Students stud16= new Students() { Name = "Kiss Lajos", NeptunId = "BKV7MO", FacultyId = elte2.Id};
+            Students stud1 = new Students() { Id = 1, Name = "Fehér Dominik", NeptunId = "GV2OA1", FacultyId = oe1.Id };
+            Students stud2 = new Students() { Id = 2, Name = "Veres Árpád", NeptunId = "QAK0PS", FacultyId = oe1.Id };
+            Students stud3 = new Students() { Id = 3, Name = "Orsós Emese", NeptunId = "ATCH5I", FacultyId = oe2.Id };
+            Students stud4 = new Students() { Id = 4, Name = "Szabó Albert", NeptunId = "D3R6UK", FacultyId = oe2.Id };
+            Students stud5 = new Students() { Id = 5, Name = "Mészáros Fanni", NeptunId = "K7KJMR", FacultyId = bge1.Id };
+            Students stud6 = new Students() { Id = 6, Name = "Vass Laura", NeptunId = "ABD7HW", FacultyId = bge1.Id };
+            Students stud7 = new Students() { Id = 7, Name = "Szalai Zoltán", NeptunId = "B0IRV1", FacultyId = bge2.Id };
+            Students stud8 = new Students() { Id = 8, Name = "Molnár Viktória", NeptunId = "QORE45", FacultyId = bge2.Id };
+            Students stud9 = new Students() { Id = 9, Name = "Magyar András", NeptunId = "VB4KOV", FacultyId = bme1.Id };
+            Students stud10= new Students() { Id = 10, Name = "Papp Attila", NeptunId = "H116BR", FacultyId = bme1.Id };
+            Students stud11= new Students() { Id = 11, Name = "Fodor Sára", NeptunId = "WEDTH8", FacultyId = bme2.Id };
+            Students stud12= new Students() { Id = 12, Name = "Illés Dóra", NeptunId = "PMCDB6", FacultyId = bme2.Id };
+            Students stud13= new Students() { Id = 13, Name = "Nagy Viktor", NeptunId = "G05YV8", FacultyId = elte1.Id};
+            Students stud14= new Students() { Id = 14, Name = "Szőke Tamás", NeptunId = "SW5XP8", FacultyId = elte1.Id};
+            Students stud15= new Students() { Id = 15, Name = "Gál Nikoletta", NeptunId = "AK45OF", FacultyId = elte2.Id};
+            Students stud16= new Students() { Id = 16, Name = "Kiss Lajos", NeptunId = "BKV7MO", FacultyId = elte2.Id};
 
             modelBuilder.Entity<University>().HasData(OE, BGE, BME, ELTE);
             modelBuilder.Entity<Faculties>().HasData(oe1, oe2, bge1, bge2, bme1, bme2, elte1, elte2);

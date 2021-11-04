@@ -12,6 +12,10 @@ namespace XS3GNR_HFT_2021221.Models
     public class Students
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+
+        [Required]
         [MaxLength(6)]
         public string NeptunId { get; set; }
 
