@@ -8,7 +8,7 @@ using XS3GNR_HFT_2021221.Models;
 
 namespace XS3GNR_HFT_2021221.Data
 {
-    class UnistudfacDBContext : DbContext
+    public class UnistudfacDBContext : DbContext
     {
         public virtual DbSet<University> Universities { get; set; }
         public virtual DbSet<Faculties> Faculties { get; set; }
