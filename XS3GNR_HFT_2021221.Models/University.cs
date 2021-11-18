@@ -24,11 +24,11 @@ namespace XS3GNR_HFT_2021221.Models
             public string ShortName { get; set; }
 
             [NotMapped]
-            public virtual ICollection<Faculties> Faculties { get; set; }
+            public virtual ICollection<Faculty> Faculties { get; set; }
 
             public University()
             {
-                Faculties = new HashSet<Faculties>();
+                Faculties = new HashSet<Faculty>();
             }
 
         }

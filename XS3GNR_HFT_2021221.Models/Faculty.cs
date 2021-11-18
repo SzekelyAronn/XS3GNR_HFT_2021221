@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace XS3GNR_HFT_2021221.Models
 {
     [Table("Faculties")]
-    public class Faculties
+    public class Faculty
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -27,14 +27,14 @@ namespace XS3GNR_HFT_2021221.Models
         public int UniId { get; set; }
 
         [NotMapped]
-        public virtual ICollection<Students> Students { get; set; }
+        public virtual ICollection<Student> Students { get; set; }
 
         [NotMapped]
         public virtual University University { get;set; }
 
-        public Faculties()
+        public Faculty()
         {
-            Students = new HashSet<Students>();
+            Students = new HashSet<Student>();
         }
     }
 }

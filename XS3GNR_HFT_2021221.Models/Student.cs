@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace XS3GNR_HFT_2021221.Models
 {
     [Table("Students")]
-    public class Students
+    public class Student
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -23,10 +23,10 @@ namespace XS3GNR_HFT_2021221.Models
         [MaxLength(20)]
         public string Name { get; set; }
 
-        [ForeignKey(nameof(Faculties))]
+        [ForeignKey(nameof(Models.Faculty))]
         public int FacultyId { get; set; }
 
         [NotMapped]
-        public virtual Faculties Faculty { get; set; }
+        public virtual Faculty Faculty { get; set; }
     }
 }

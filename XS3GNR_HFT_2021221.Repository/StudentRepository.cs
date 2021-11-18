@@ -17,18 +17,18 @@ namespace XS3GNR_HFT_2021221.Repository
             this.db = db;
         }
 
-        public void Create(Students student)
+        public void Create(Student student)
         {
             db.Students.Add(student);
             db.SaveChanges();
         }
 
-        public Students Read(int id)
+        public Student Read(int id)
         {
             return db.Students.FirstOrDefault(t => t.Id == id);
         }
 
-        public IQueryable<Students> ReadAll()
+        public IQueryable<Student> ReadAll()
         {
             return db.Students;
         }
@@ -39,7 +39,7 @@ namespace XS3GNR_HFT_2021221.Repository
             db.SaveChanges();
         }
 
-        public void Update(Students student)
+        public void Update(Student student)
         {
             var oldStudent = Read(student.Id);
             oldStudent.FacultyId = student.FacultyId;

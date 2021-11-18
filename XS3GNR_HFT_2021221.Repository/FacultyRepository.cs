@@ -17,18 +17,18 @@ namespace XS3GNR_HFT_2021221.Repository
             this.db = db;
         }
 
-        public void Create(Faculties faculty)
+        public void Create(Faculty faculty)
         {
             db.Faculties.Add(faculty);
             db.SaveChanges();
         }
 
-        public Faculties Read(int id)
+        public Faculty Read(int id)
         {
             return db.Faculties.FirstOrDefault(t => t.Id == id);
         }
 
-        public IQueryable<Faculties> ReadAll()
+        public IQueryable<Faculty> ReadAll()
         {
             return db.Faculties;
         }
@@ -39,7 +39,7 @@ namespace XS3GNR_HFT_2021221.Repository
             db.SaveChanges();
         }
 
-        public void Update(Faculties faculty)
+        public void Update(Faculty faculty)
         {
             var oldFaculty = Read(faculty.Id);
             oldFaculty.Name = faculty.Name;
