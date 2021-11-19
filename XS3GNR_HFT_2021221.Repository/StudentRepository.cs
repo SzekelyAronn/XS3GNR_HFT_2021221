@@ -8,7 +8,7 @@ using XS3GNR_HFT_2021221.Models;
 
 namespace XS3GNR_HFT_2021221.Repository
 {
-    public class StudentRepository
+    public class StudentRepository : IStudentRepository
     {
         UnistudfacDBContext db;
 
