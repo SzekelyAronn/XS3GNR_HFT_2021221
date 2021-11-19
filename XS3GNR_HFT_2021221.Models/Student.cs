@@ -23,6 +23,9 @@ namespace XS3GNR_HFT_2021221.Models
         [MaxLength(20)]
         public string Name { get; set; }
 
+        [Required]
+        public DateTime BirthDate { get; set; }
+
         [ForeignKey(nameof(Models.Faculty))]
         public int FacultyId { get; set; }
 

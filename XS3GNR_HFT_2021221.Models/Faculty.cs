@@ -26,6 +26,9 @@ namespace XS3GNR_HFT_2021221.Models
         [ForeignKey(nameof(University))]
         public int UniId { get; set; }
 
+        [Required]
+        public int LocationbyDistrict { get; set; }
+
         [NotMapped]
         public virtual ICollection<Student> Students { get; set; }
 
