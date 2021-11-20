@@ -8,7 +8,7 @@ using XS3GNR_HFT_2021221.Repository;
 
 namespace XS3GNR_HFT_2021221.Logic
 {
-    class UniversityLogic
+    public class UniversityLogic : IUniversityLogic
     {
         IUniRepository uniRepo;
 

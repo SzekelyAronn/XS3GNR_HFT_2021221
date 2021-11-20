@@ -8,7 +8,7 @@ using XS3GNR_HFT_2021221.Repository;
 
 namespace XS3GNR_HFT_2021221.Logic
 {
-    class FacultyLogic
+    public class FacultyLogic : IFacultyLogic
     {
         IFacultyRepository facultyRepo;
 
@@ -41,6 +41,54 @@ namespace XS3GNR_HFT_2021221.Logic
         {
             facultyRepo.Update(faculty);
         }
+
+        public IEnumerable<EngineerUnis> EngineerSchools()
+        {
+
+            var result = from x in facultyRepo.ReadAll()
+                         where x.Name.Contains("mérnök")
+                         select new EngineerUnis
+                         {
+                             UniversityName = x.University.Name,
+                             FacultyShortName = x.ShortName,
+                             FacultyName = x.Name
+                         };
+
+            return result.ToList();
+
+        }
+
+        public IEnumerable<UnisbyDistrict> UniversitiesInDistrict5()
+        {
+            var result = from x in facultyRepo.ReadAll()
+                         where x.LocationbyDistrict == 5
+                         select new UnisbyDistrict
+                         {
+                             UniversityName = x.University.Name,
+                             FacultyName = x.Name,
+                             LocationbyDistrict = x.LocationbyDistrict
+                         };
+
+            return result.ToArray();
+        }
+
+        public IEnumerable<StudentsAverage> StudentAverageNameLength()
+        {
+            var result = from x in facultyRepo.ReadAll()
+                         group x by x.University.Name into grp
+                         select new StudentsAverage
+                         {
+                             UniversityName = grp.Key,
+                             AverageStudentNameLength = grp.Average(x => x.Students.Average(x => x.Name.Length))
+                         };
+
+            return result.ToArray();
+
+        }
+
+
+
+
     }
 
 

@@ -8,7 +8,7 @@ using XS3GNR_HFT_2021221.Repository;
 
 namespace XS3GNR_HFT_2021221.Logic
 {
-    class StudentLogic
+    public class StudentLogic : IStudentLogic
     {
         IStudentRepository studentRepo;
 
@@ -40,6 +40,39 @@ namespace XS3GNR_HFT_2021221.Logic
         public void Update(Student student)
         {
             studentRepo.Update(student);
+        }
+
+        public IEnumerable<StudentResult> StudentsFromLastCentury()
+        {
+
+            var result = from x in studentRepo.ReadAll()
+                         where (x.BirthDate.CompareTo(new DateTime(2000, 01, 01)) < 0)
+                         select new StudentResult
+                         {
+                             StudentName = x.Name,
+                             StudentNeptunId = x.NeptunId,
+                             StudentsUni = x.Faculty.University.Name,
+                             StudentFaculty = x.Faculty.Name
+                         };
+
+            return result.ToArray();
+        }
+
+
+        public IEnumerable<StudentResult> Studentswith_X_inNeptunId()
+        {
+
+            var result = from x in studentRepo.ReadAll()
+                         where (x.NeptunId.Contains("X"))
+                         select new StudentResult
+                         {
+                             StudentName = x.Name,
+                             StudentNeptunId = x.NeptunId,
+                             StudentsUni = x.Faculty.University.Name,
+                             StudentFaculty = x.Faculty.Name
+                         };
+
+            return result.ToArray();
         }
 
 

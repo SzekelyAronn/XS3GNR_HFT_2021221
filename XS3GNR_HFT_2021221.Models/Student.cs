@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace XS3GNR_HFT_2021221.Models
 {
-    [Table("Students")]
+    [Table("students")]
     public class Student
     {
         [Key]
