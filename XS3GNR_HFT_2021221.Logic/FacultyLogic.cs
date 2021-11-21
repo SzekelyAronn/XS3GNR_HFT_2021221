@@ -72,19 +72,7 @@ namespace XS3GNR_HFT_2021221.Logic
             return result.ToArray();
         }
 
-        public IEnumerable<StudentsAverage> StudentAverageNameLength()
-        {
-            var result = from x in facultyRepo.ReadAll()
-                         group x by x.University.Name into grp
-                         select new StudentsAverage
-                         {
-                             UniversityName = grp.Key,
-                             AverageStudentNameLength = grp.Average(x => x.Students.Average(x => x.Name.Length))
-                         };
 
-            return result.ToArray();
-
-        }
 
 
 

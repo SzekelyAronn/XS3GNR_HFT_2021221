@@ -15,11 +15,11 @@ namespace XS3GNR_HFT_2021221.Models
             [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
             public int Id { get; set; }
 
-            [MaxLength(20)]
+            [MaxLength(100)]
             [Required]
             public string Name { get; set; }
 
-            [MaxLength(10)]
+            [MaxLength(100)]
             [Required]
             public string ShortName { get; set; }
 

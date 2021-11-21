@@ -11,7 +11,6 @@ namespace XS3GNR_HFT_2021221.Logic
         IEnumerable<EngineerUnis> EngineerSchools();
         Faculty Read(int id);
         IQueryable<Faculty> ReadAll();
-        IEnumerable<StudentsAverage> StudentAverageNameLength();
         IEnumerable<UnisbyDistrict> UniversitiesInDistrict5();
         void Update(Faculty faculty);
     }

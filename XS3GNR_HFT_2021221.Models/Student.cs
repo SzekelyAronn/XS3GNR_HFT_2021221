@@ -26,7 +26,7 @@ namespace XS3GNR_HFT_2021221.Models
         [Required]
         public DateTime BirthDate { get; set; }
 
-        [ForeignKey(nameof(Models.Faculty))]
+        [ForeignKey(nameof(Faculty))]
         public int FacultyId { get; set; }
 
         [NotMapped]

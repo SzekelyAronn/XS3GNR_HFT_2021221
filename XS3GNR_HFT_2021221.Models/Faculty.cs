@@ -16,12 +16,12 @@ namespace XS3GNR_HFT_2021221.Models
         public int Id { get; set; }
 
         [Required]
-        [MaxLength(50)]
-        public string Name;
+        [MaxLength(100)]
+        public string Name { get; set; }
 
         [Required]
         [MaxLength(20)]
-        public string ShortName;
+        public string ShortName { get; set; }
 
         [ForeignKey(nameof(University))]
         public int UniId { get; set; }

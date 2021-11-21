@@ -65,7 +65,7 @@ namespace XS3GNR_HFT_2021221.Data
             Faculty elte2 = new Faculty() { Id = 8, ShortName = "BTK", Name = "Bölcsészettudományi Kar", UniId = ELTE.Id, LocationbyDistrict = 8};
 
             Student stud1 = new Student() { Id = 1, Name = "Fehér Dominik", NeptunId = "GV2OA1", FacultyId = oe1.Id, BirthDate = new DateTime(2002,01,02) };
-            Student stud2 = new Student() { Id = 2, Name = "Veres Árpád", NeptunId = "QAK0PS", FacultyId = oe1.Id ,BirthDate = new DateTime(1998,02,04) };
+            Student stud2 = new Student() { Id = 2, Name = "Veres Árpád", NeptunId = "QAX0PS", FacultyId = oe1.Id ,BirthDate = new DateTime(1998,02,04) };
             Student stud3 = new Student() { Id = 3, Name = "Orsós Emese", NeptunId = "ATCH5I", FacultyId = oe2.Id, BirthDate = new DateTime(1990,04,12) };
             Student stud4 = new Student() { Id = 4, Name = "Szabó Albert", NeptunId = "D3R6UK", FacultyId = oe2.Id, BirthDate = new DateTime(2000,06,17) };
             Student stud5 = new Student() { Id = 5, Name = "Mészáros Fanni", NeptunId = "K7KJMR", FacultyId = bge1.Id, BirthDate = new DateTime(1999,08,13) };

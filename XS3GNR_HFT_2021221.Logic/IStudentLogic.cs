@@ -12,6 +12,7 @@ namespace XS3GNR_HFT_2021221.Logic
         IQueryable<Student> ReadAll();
         IEnumerable<StudentResult> StudentsFromLastCentury();
         IEnumerable<StudentResult> Studentswith_X_inNeptunId();
+        IEnumerable<StudentsAverage> StudentAverageNameLength();
         void Update(Student student);
     }
 }

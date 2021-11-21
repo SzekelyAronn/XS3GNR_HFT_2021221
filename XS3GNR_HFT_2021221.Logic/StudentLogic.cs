@@ -50,6 +50,7 @@ namespace XS3GNR_HFT_2021221.Logic
                          select new StudentResult
                          {
                              StudentName = x.Name,
+                             BirthDate = x.BirthDate,
                              StudentNeptunId = x.NeptunId,
                              StudentsUni = x.Faculty.University.Name,
                              StudentFaculty = x.Faculty.Name
@@ -73,6 +74,20 @@ namespace XS3GNR_HFT_2021221.Logic
                          };
 
             return result.ToArray();
+        }
+
+        public IEnumerable<StudentsAverage> StudentAverageNameLength()
+        {
+            var result = from x in studentRepo.ReadAll()
+                         group x.Name by x.Faculty.University.Name into grp
+                         select new StudentsAverage
+                         {
+                             UniversityName = grp.Key,
+                             AverageStudentNameLength = grp.Average(x => x.Length)
+                         };
+
+            return result.ToArray();
+
         }
 
 

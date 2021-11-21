@@ -16,6 +16,8 @@ namespace XS3GNR_HFT_2021221.Models
 
         public string StudentFaculty { get; set; }
 
+        public DateTime BirthDate { get; set; }
+
         public override bool Equals(object obj)
         {
             if (obj is StudentResult)
