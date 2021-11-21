@@ -19,6 +19,8 @@ namespace XS3GNR_HFT_2021221.Logic
 
         public void Create(Faculty faculty)
         {
+            if (faculty.Id < 1)
+                throw new ArgumentException(nameof(faculty), "Faculty id must be positive");
             facultyRepo.Create(faculty);
         }
 
@@ -54,7 +56,7 @@ namespace XS3GNR_HFT_2021221.Logic
                              FacultyName = x.Name
                          };
 
-            return result.ToList();
+            return result.ToArray();
 
         }
 
