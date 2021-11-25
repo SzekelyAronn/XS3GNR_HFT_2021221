@@ -10,45 +10,45 @@ namespace XS3GNR_HFT_2021221.Endpoint.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class StudentController : ControllerBase
+    public class UniversityController : ControllerBase
     {
 
-        IStudentLogic sl;
+        IUniversityLogic ul;
 
-        public StudentController(IStudentLogic sl)
+        public UniversityController(IUniversityLogic ul)
         {
-            this.sl = sl;
+            this.ul = ul;
         }
 
         [HttpGet]
-        public IEnumerable<Student> Get()
+        public IEnumerable<University> Get()
         {
-            return sl.ReadAll();
+            return ul.ReadAll();
         }
 
         [HttpGet("{id}")]
-        public Student Get(int id)
+        public University Get(int id)
         {
-            return sl.Read(id);
+            return ul.Read(id);
         }
 
         [HttpPost]
-        public void Post([FromBody] Student value)
+        public void Post([FromBody] University value)
         {
-            sl.Create(value);
+            ul.Create(value);
         }
 
         [HttpPut]
-        public void Put(int id, [FromBody] Student value)
+        public void Put(int id, [FromBody] University value)
         {
-            sl.Update(value);
+            ul.Update(value);
         }
 
 
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            sl.Delete(id);
+            ul.Delete(id);
         }
     }
 }

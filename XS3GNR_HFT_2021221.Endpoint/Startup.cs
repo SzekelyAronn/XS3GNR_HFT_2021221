@@ -18,14 +18,13 @@ namespace XS3GNR_HFT_2021221.Endpoint
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-
-            services.AddTransient<IStudentLogic,StudentLogic>();
+            services.AddTransient<IStudentLogic, StudentLogic>();
+            services.AddTransient<IFacultyLogic, FacultyLogic>();
             services.AddTransient<IUniversityLogic, UniversityLogic>();
-            services.AddTransient<IFacultyLogic,FacultyLogic>();
 
-            services.AddTransient<IStudentRepository, StudentRepository>();
-            services.AddTransient<IUniRepository, UniRepository>();
             services.AddTransient<IFacultyRepository, FacultyRepository>();
+            services.AddTransient<IUniRepository, UniRepository>();
+            services.AddTransient<IStudentRepository, StudentRepository>();
 
             services.AddTransient<UnistudfacDBContext, UnistudfacDBContext>();
         }

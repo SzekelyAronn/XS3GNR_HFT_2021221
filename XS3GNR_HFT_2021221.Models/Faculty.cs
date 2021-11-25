@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace XS3GNR_HFT_2021221.Models
@@ -33,6 +34,7 @@ namespace XS3GNR_HFT_2021221.Models
         public virtual ICollection<Student> Students { get; set; }
 
         [NotMapped]
+        [JsonIgnore]
         public virtual University University { get;set; }
 
         public Faculty()
