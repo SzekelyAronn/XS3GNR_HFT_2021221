@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using XS3GNR_HFT_2021221.Logic;
+using XS3GNR_HFT_2021221.Models;
 
 namespace XS3GNR_HFT_2021221.Endpoint.Controllers
 {
@@ -14,9 +15,43 @@ namespace XS3GNR_HFT_2021221.Endpoint.Controllers
     {
         IStudentLogic sl;
 
-        public StatController(IStudentLogic sl)
+        IFacultyLogic fl;
+
+        public StatController(IStudentLogic sl, IFacultyLogic fl)
         {
             this.sl = sl;
+            this.fl = fl;
+        }
+
+
+        [HttpGet]
+        public IEnumerable<StudentsAverage> GetAvgNameLengthByUni()
+        {
+            return sl.StudentAverageNameLength();
+        }
+
+        [HttpGet]
+        public IEnumerable<StudentResult> GetStudentsFromLastCentury()
+        {
+            return sl.StudentsFromLastCentury();
+        }
+
+        [HttpGet]
+        public IEnumerable<StudentResult> GetStudentsWithXInNeptun()
+        {
+            return sl.Studentswith_X_inNeptunId();
+        }
+
+        [HttpGet]
+        public IEnumerable<EngineerUnis> GetEngineerSchools()
+        {
+            return fl.EngineerSchools();
+        }
+
+        [HttpGet]
+        public IEnumerable<UnisbyDistrict> GetUnisInDistrict5()
+        {
+            return fl.UniversitiesInDistrict5();
         }
 
     }

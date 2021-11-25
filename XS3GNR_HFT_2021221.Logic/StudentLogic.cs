@@ -72,7 +72,8 @@ namespace XS3GNR_HFT_2021221.Logic
                              StudentName = x.Name,
                              StudentNeptunId = x.NeptunId,
                              StudentsUni = x.Faculty.University.Name,
-                             StudentFaculty = x.Faculty.Name
+                             StudentFaculty = x.Faculty.Name,
+                             BirthDate = x.BirthDate
                          };
 
             return result.ToArray();
