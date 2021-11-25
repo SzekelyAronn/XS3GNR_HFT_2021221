@@ -4,7 +4,7 @@ using XS3GNR_HFT_2021221.Models;
 
 namespace XS3GNR_HFT_2021221.Logic
 {
-    interface IFacultyLogic
+    public interface IFacultyLogic
     {
         void Create(Faculty faculty);
         void Delete(int id);
