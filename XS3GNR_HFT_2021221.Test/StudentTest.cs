@@ -22,7 +22,7 @@ namespace XS3GNR_HFT_2021221.Test
             var mockStudRepo = new Mock<IStudentRepository>();
 
             University OE = new University() { Name = "Óbudai Egyetem", Id = 1, ShortName = "OE" };
-            Faculty NIK = new Faculty() { Name = "Neumann János Informatikai Kar", Id = 1, UniId = OE.Id, University = OE};
+            Faculty NIK = new Faculty() { Name = "Neumann János Informatikai Kar", Id = 1, UniversityId = OE.Id, University = OE};
 
             var students = new List<Student>
             {
@@ -56,7 +56,7 @@ namespace XS3GNR_HFT_2021221.Test
         [Test]
         public void CreateTest()
         {
-            Student stud = new Student() { Id = -200, Name = "Péter", NeptunId = "ASDASD" };
+            Student stud = new Student() { Id = 20, Name = "Péter", NeptunId = "ASDASD" ,BirthDate= DateTime.Now,FacultyId=-300};
 
             Assert.That(() => sl.Create(stud), Throws.Exception );
         }

@@ -46,7 +46,7 @@ namespace XS3GNR_HFT_2021221.Data
                 entity
                 .HasOne(faculty => faculty.University)
                 .WithMany(university => university.Faculties)
-                .HasForeignKey(faculty => faculty.UniId)
+                .HasForeignKey(faculty => faculty.UniversityId)
                 .OnDelete(DeleteBehavior.Restrict);
             });
 
@@ -55,14 +55,14 @@ namespace XS3GNR_HFT_2021221.Data
             University BME = new University() { Id = 3, Name = "Budapesti Műszaki és Gazdaságtudományi Egyetem", ShortName = "BME"};
             University ELTE = new University() { Id = 4, Name = "Eötvös Loránd Tudományegyetem", ShortName = "ELTE"};
 
-            Faculty oe1 = new Faculty() { Id = 1, ShortName = "NIK", Name = "Neumann János Informatikai Kar", UniId = OE.Id, LocationbyDistrict = 3};
-            Faculty oe2 = new Faculty() { Id = 2, ShortName = "KVK", Name = "Kandó Kálmán Villamosmérnöki Kar", UniId = OE.Id, LocationbyDistrict = 3 };
-            Faculty bge1 = new Faculty() { Id = 3, ShortName = "KVIK", Name = "Kereskedelmi, Vendéglátóipari és Idegenforgalmi Kar", UniId = BGE.Id, LocationbyDistrict = 5 };
-            Faculty bge2 = new Faculty() { Id = 4, ShortName = "PSZK", Name = "Pénzügyi és Számviteli Kar", UniId = BGE.Id, LocationbyDistrict = 14 };
-            Faculty bme1 = new Faculty() { Id = 5, ShortName = "ÉPK", Name = "Építészmérnöki Kar", UniId = BME.Id, LocationbyDistrict = 11};
-            Faculty bme2 = new Faculty() { Id = 6, ShortName = "KJK", Name = "Közlekedésmérnöki és Járműmérnöki Kar", UniId = BME.Id,LocationbyDistrict = 11};
-            Faculty elte1 = new Faculty() { Id = 7, ShortName = "ÁJK", Name = "Állam- és Jogtudományi Kar", UniId = ELTE.Id, LocationbyDistrict = 5 };
-            Faculty elte2 = new Faculty() { Id = 8, ShortName = "BTK", Name = "Bölcsészettudományi Kar", UniId = ELTE.Id, LocationbyDistrict = 8};
+            Faculty oe1 = new Faculty() { Id = 1, ShortName = "NIK", Name = "Neumann János Informatikai Kar", UniversityId = OE.Id, LocationbyDistrict = 3};
+            Faculty oe2 = new Faculty() { Id = 2, ShortName = "KVK", Name = "Kandó Kálmán Villamosmérnöki Kar", UniversityId = OE.Id, LocationbyDistrict = 3 };
+            Faculty bge1 = new Faculty() { Id = 3, ShortName = "KVIK", Name = "Kereskedelmi, Vendéglátóipari és Idegenforgalmi Kar", UniversityId = BGE.Id, LocationbyDistrict = 5 };
+            Faculty bge2 = new Faculty() { Id = 4, ShortName = "PSZK", Name = "Pénzügyi és Számviteli Kar", UniversityId = BGE.Id, LocationbyDistrict = 14 };
+            Faculty bme1 = new Faculty() { Id = 5, ShortName = "ÉPK", Name = "Építészmérnöki Kar", UniversityId = BME.Id, LocationbyDistrict = 11};
+            Faculty bme2 = new Faculty() { Id = 6, ShortName = "KJK", Name = "Közlekedésmérnöki és Járműmérnöki Kar", UniversityId = BME.Id,LocationbyDistrict = 11};
+            Faculty elte1 = new Faculty() { Id = 7, ShortName = "ÁJK", Name = "Állam- és Jogtudományi Kar", UniversityId = ELTE.Id, LocationbyDistrict = 5 };
+            Faculty elte2 = new Faculty() { Id = 8, ShortName = "BTK", Name = "Bölcsészettudományi Kar", UniversityId = ELTE.Id, LocationbyDistrict = 8};
 
             Student stud1 = new Student() { Id = 1, Name = "Fehér Dominik", NeptunId = "GV2OA1", FacultyId = oe1.Id, BirthDate = new DateTime(2002,01,02) };
             Student stud2 = new Student() { Id = 2, Name = "Veres Árpád", NeptunId = "QAX0PS", FacultyId = oe1.Id ,BirthDate = new DateTime(1998,02,04) };

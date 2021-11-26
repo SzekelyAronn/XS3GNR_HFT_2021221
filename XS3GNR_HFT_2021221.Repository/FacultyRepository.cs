@@ -45,7 +45,7 @@ namespace XS3GNR_HFT_2021221.Repository
             oldFaculty.Name = faculty.Name;
             oldFaculty.ShortName = faculty.ShortName;
             oldFaculty.Students = faculty.Students;
-            oldFaculty.UniId = faculty.UniId;
+            oldFaculty.UniversityId = faculty.UniversityId;
             db.SaveChanges();
         }
     }

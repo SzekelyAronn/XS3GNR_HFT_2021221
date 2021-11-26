@@ -36,7 +36,7 @@ namespace XS3GNR_HFT_2021221.Test
                     Id = 1,
                     ShortName = "NIK",
                     Name = "Neumann János Informatikai Kar",
-                    UniId = OE.Id,
+                    UniversityId = OE.Id,
                     University = OE,
                     LocationbyDistrict = 3
                 },
@@ -45,7 +45,7 @@ namespace XS3GNR_HFT_2021221.Test
                     Id = 2,
                     ShortName = "KJK",
                     Name = "Közlekedésmérnöki és Járműmérnöki Kar",
-                    UniId = BME.Id,
+                    UniversityId = BME.Id,
                     University = BME,
                     LocationbyDistrict = 11
                 },
@@ -54,7 +54,7 @@ namespace XS3GNR_HFT_2021221.Test
                     Id = 3,
                     ShortName = "KVIK",
                     Name = "Kereskedelmi, Vendéglátóipari és Idegenforgalmi Kar",
-                    UniId = BGE.Id,
+                    UniversityId = BGE.Id,
                     University = BGE,
                     LocationbyDistrict = 5
                 }
@@ -68,9 +68,9 @@ namespace XS3GNR_HFT_2021221.Test
         }
 
         [Test]
-        public void CreateWithWrongId()
+        public void CreateTest()
         {
-            Faculty faculty = new Faculty() { Id = -250, Name = "testfaculty"};
+            Faculty faculty = new Faculty() { Id = 20, Name = "testfaculty",UniversityId=-2,ShortName="TF",LocationbyDistrict=4};
 
             Assert.That(() => fl.Create(faculty), Throws.Exception);
         }

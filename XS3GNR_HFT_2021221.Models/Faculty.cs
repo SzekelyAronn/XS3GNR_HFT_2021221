@@ -25,7 +25,7 @@ namespace XS3GNR_HFT_2021221.Models
         public string ShortName { get; set; }
 
         [ForeignKey(nameof(University))]
-        public int UniId { get; set; }
+        public int UniversityId { get; set; }
 
         [Required]
         public int LocationbyDistrict { get; set; }

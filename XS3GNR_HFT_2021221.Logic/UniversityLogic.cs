@@ -19,8 +19,10 @@ namespace XS3GNR_HFT_2021221.Logic
 
         public void Create(University university)
         {
-            if (university.Id < 1)
-                throw new ArgumentException(nameof(university), "University id must be positive");
+            if (university.Id < 0)
+            {
+                throw new ArgumentException("Id cannot be negative");
+            }
             uniRepo.Create(university);
         }
 
