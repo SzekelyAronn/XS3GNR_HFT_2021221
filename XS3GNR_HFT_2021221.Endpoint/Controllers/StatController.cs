@@ -25,9 +25,9 @@ namespace XS3GNR_HFT_2021221.Endpoint.Controllers
 
 
         [HttpGet]
-        public IEnumerable<StudentsAverage> GetAvgNameLengthByUni()
+        public IEnumerable<StudentsAverage> GetAvgAgeByUni()
         {
-            return sl.StudentAverageNameLength();
+            return sl.AverageStudentAgeByUni();
         }
 
         [HttpGet]

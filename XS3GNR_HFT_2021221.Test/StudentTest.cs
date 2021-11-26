@@ -68,17 +68,17 @@ namespace XS3GNR_HFT_2021221.Test
         }
 
         [Test]
-        public void AvgNameLengthTest()
+        public void AvgAgeTest()
         {
 
-            var result = sl.StudentAverageNameLength();
+            var result = sl.AverageStudentAgeByUni();
 
             var expected = new List<StudentsAverage>()
             {
                 new StudentsAverage
                 {
                     UniversityName = "Óbudai Egyetem",
-                    AverageStudentNameLength = 12
+                    AverageStudentAge = (DateTime.Now.Year - 2002 + DateTime.Now.Year - 1998)/2
                 }
             };
 

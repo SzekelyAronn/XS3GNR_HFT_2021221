@@ -117,14 +117,14 @@ namespace XS3GNR_HFT_2021221.Models
     {
         public string UniversityName { get; set; }
 
-        public double AverageStudentNameLength { get; set; }
+        public double AverageStudentAge { get; set; }
 
         public override bool Equals(object obj)
         {
             if (obj is StudentsAverage)
             {
                 var other = obj as StudentsAverage;
-                return this.UniversityName == other.UniversityName && this.AverageStudentNameLength == other.AverageStudentNameLength;
+                return this.UniversityName == other.UniversityName && this.AverageStudentAge == other.AverageStudentAge;
             }
             else
             {
@@ -134,12 +134,12 @@ namespace XS3GNR_HFT_2021221.Models
 
         public override int GetHashCode()
         {
-            return this.UniversityName.GetHashCode() + (int)this.AverageStudentNameLength;
+            return this.UniversityName.GetHashCode() + (int)this.AverageStudentAge;
         }
 
         public override string ToString()
         {
-            return $"UniversityName={UniversityName}, Average student name length={AverageStudentNameLength}";
+            return $"UniversityName={UniversityName}, Average student age ={AverageStudentAge}";
         }
 
     }

@@ -10,9 +10,6 @@ namespace XS3GNR_HFT_2021221.Client
             System.Threading.Thread.Sleep(8000);
 
             RestService rest = new RestService("http://localhost:29075");
-
-            var Students = rest.Get<Student>("student");
-            ;
         }
     }
 }
