@@ -1,4 +1,5 @@
 ﻿using System;
+using XS3GNR_HFT_2021221.Models;
 
 namespace XS3GNR_HFT_2021221.Client
 {
@@ -6,7 +7,12 @@ namespace XS3GNR_HFT_2021221.Client
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            System.Threading.Thread.Sleep(8000);
+
+            RestService rest = new RestService("http://localhost:29075");
+
+            var Students = rest.Get<Student>("student");
+            ;
         }
     }
 }
