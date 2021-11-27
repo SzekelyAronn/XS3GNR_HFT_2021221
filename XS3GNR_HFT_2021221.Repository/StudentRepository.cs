@@ -45,6 +45,7 @@ namespace XS3GNR_HFT_2021221.Repository
             oldStudent.FacultyId = student.FacultyId;
             oldStudent.Name = student.Name;
             oldStudent.NeptunId = student.NeptunId;
+            oldStudent.BirthDate = student.BirthDate;
             db.SaveChanges();
         }
     }
