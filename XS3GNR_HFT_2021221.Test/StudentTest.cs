@@ -62,9 +62,9 @@ namespace XS3GNR_HFT_2021221.Test
         }
 
         [Test]
-        public void ReadAllWorks()
+        public void DeleteTest()
         {
-            Assert.That(() => sl.ReadAll(), Is.Not.Empty);
+            Assert.That(() => sl.Delete(-5), Throws.Exception);
         }
 
         [Test]

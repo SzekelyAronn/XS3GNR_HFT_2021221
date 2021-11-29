@@ -38,6 +38,10 @@ namespace XS3GNR_HFT_2021221.Logic
 
         public void Delete(int id)
         {
+            if (id < 1)
+            {
+                throw new ArgumentException("Id cannot be negative");
+            }
             uniRepo.Delete(id);
         }
 

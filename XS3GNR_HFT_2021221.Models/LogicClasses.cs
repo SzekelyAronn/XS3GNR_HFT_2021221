@@ -57,7 +57,7 @@ namespace XS3GNR_HFT_2021221.Models
             {
                 var other = obj as EngineerUnis;
                 return this.UniversityName == other.UniversityName && this.FacultyName == other.FacultyName
-                    && this.FacultyShortName == other.FacultyName;
+                    && this.FacultyShortName == other.FacultyShortName;
             }
             else
             {

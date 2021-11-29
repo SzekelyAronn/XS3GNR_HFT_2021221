@@ -91,7 +91,7 @@ namespace XS3GNR_HFT_2021221.Test
                 }
             };
 
-            Assert.That(result, Is.EqualTo(result));
+            Assert.That(result, Is.EqualTo(expected));
         }
 
         [Test]
