@@ -28,6 +28,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Others", "Others", "{7E9811
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XS3GNR_HFT_2021221.WPFClient", "XS3GNR_HFT_2021221.WPFClient\XS3GNR_HFT_2021221.WPFClient.csproj", "{435B1317-F17C-4F07-AEEE-3631903AC71D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -62,6 +64,10 @@ Global
 		{F5D8E425-714F-4FCC-89A7-1EF53A1A0099}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5D8E425-714F-4FCC-89A7-1EF53A1A0099}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5D8E425-714F-4FCC-89A7-1EF53A1A0099}.Release|Any CPU.Build.0 = Release|Any CPU
+		{435B1317-F17C-4F07-AEEE-3631903AC71D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{435B1317-F17C-4F07-AEEE-3631903AC71D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{435B1317-F17C-4F07-AEEE-3631903AC71D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{435B1317-F17C-4F07-AEEE-3631903AC71D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
