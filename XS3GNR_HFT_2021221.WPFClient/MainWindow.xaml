@@ -14,13 +14,20 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <ListBox ItemsSource="{Binding Students}">
+        <ListBox ItemsSource="{Binding Students}" SelectedItem="{Binding SelectedStudent}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Label Content="{Binding Name}"></Label> 
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <StackPanel Grid.Column="1">
+            <Label Content="Name" Background="LightBlue" Padding="10"/>
+            <TextBox Text="{Binding SelectedStudent.Name}" Padding="10" Margin="0,0,0,30"></TextBox>
+            <Button Content="Create Student" Command="{Binding createstudent}" Margin="10" Padding="10"></Button>
+            <Button Content="Delete Student" Command="{Binding deletestudent}" Margin="10" Padding="10"></Button>
+            <Button Content="Update Student" Command="{Binding updatestudent}" Margin="10" Padding="10"></Button>
+        </StackPanel>
 
     </Grid>
 </Window>

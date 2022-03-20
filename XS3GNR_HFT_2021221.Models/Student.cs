@@ -16,7 +16,6 @@ namespace XS3GNR_HFT_2021221.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        [Required]
         [MaxLength(6)]
         public string NeptunId { get; set; }
 
@@ -24,7 +23,6 @@ namespace XS3GNR_HFT_2021221.Models
         [MaxLength(20)]
         public string Name { get; set; }
 
-        [Required]
         public DateTime BirthDate { get; set; }
 
         [ForeignKey(nameof(Faculty))]

@@ -38,7 +38,7 @@ namespace XS3GNR_HFT_2021221.Data
                 .HasOne(student => student.Faculty)
                 .WithMany(faculty => faculty.Students)
                 .HasForeignKey(student => student.FacultyId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Cascade);
             });
 
             modelBuilder.Entity<Faculty>(entity =>
@@ -47,7 +47,7 @@ namespace XS3GNR_HFT_2021221.Data
                 .HasOne(faculty => faculty.University)
                 .WithMany(university => university.Faculties)
                 .HasForeignKey(faculty => faculty.UniversityId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Cascade);
             });
 
             University OE = new University() { Id = 1, Name = "Óbudai Egyetem", ShortName = "OE"};
