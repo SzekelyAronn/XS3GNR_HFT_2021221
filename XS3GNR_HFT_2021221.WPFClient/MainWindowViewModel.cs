@@ -14,7 +14,11 @@ namespace XS3GNR_HFT_2021221.WPFClient
     {
         public RestCollection<Student> Students { get; set; }
 
+        public RestCollection<University> Universities { get; set; }
+
         private Student selectedStudent;
+
+        private University selectedUni;
 
         public Student SelectedStudent
         {
@@ -28,11 +32,34 @@ namespace XS3GNR_HFT_2021221.WPFClient
                     {
                         Name = value.Name,
                         Id = value.Id,
-                        FacultyId = value.FacultyId
+                        FacultyId = value.FacultyId,
+                        NeptunId = value.NeptunId
 
                     };
                     OnPropertyChanged();
                     (deletestudent as RelayCommand).NotifyCanExecuteChanged();
+                }
+            }
+        }
+
+        public University SelectedUni
+        {
+            get { return selectedUni; }
+
+            set
+            {
+                if (value != null)
+                {
+                    selectedUni = new University()
+                    {
+                        Name = value.Name,
+                        Id = value.Id,
+                        ShortName = value.ShortName,
+                        Faculties = value.Faculties
+
+                    };
+                    OnPropertyChanged();
+                    (deleteuniversity as RelayCommand).NotifyCanExecuteChanged();
                 }
             }
         }
@@ -43,23 +70,36 @@ namespace XS3GNR_HFT_2021221.WPFClient
 
         public ICommand updatestudent { get; set; }
 
+
+        public ICommand createuniversity { get; set; }
+
+        public ICommand deleteuniversity { get; set; }
+
+        public ICommand updateuniversity { get; set; }
+
         public MainWindowViewModel()
         {
 
             Students = new RestCollection<Student>("http://localhost:29075/", "student");
+
+            Universities = new RestCollection<University>("http://localhost:29075/", "university");
 
             createstudent = new RelayCommand(() => 
             {
                 Students.Add(new Student()
                 {
                     Name = SelectedStudent.Name,
-                    FacultyId = SelectedStudent.FacultyId
+                    FacultyId = SelectedStudent.FacultyId,
+                    NeptunId=SelectedStudent.NeptunId
                 });
             });
 
             deletestudent = new RelayCommand(() =>
             {
-                Students.Delete(SelectedStudent.Id);
+                if (SelectedStudent != null)
+                {
+                    Students.Delete(SelectedStudent.Id);
+                }
 
             },
             () =>
@@ -72,6 +112,39 @@ namespace XS3GNR_HFT_2021221.WPFClient
                 Students.Update(SelectedStudent);
             });
             SelectedStudent = new Student() { FacultyId=1};
+
+
+            createuniversity = new RelayCommand(() =>
+            {
+                if (SelectedUni != null)
+                {
+                    Universities.Add(new University()
+                    {
+                        Name = selectedUni.Name,
+                        ShortName = selectedUni.ShortName
+                    });
+                }
+            });
+
+            deleteuniversity = new RelayCommand(() =>
+            {
+                if (SelectedUni != null)
+                {
+                    Universities.Delete(selectedUni.Id);
+                }
+
+            },
+            () =>
+            {
+                return SelectedUni != null;
+            });
+
+            updateuniversity = new RelayCommand(() =>
+            {
+                Universities.Update(SelectedUni);
+            });
+            //SelectedStudent = new Student() { FacultyId = 1 };
         }
+
     }
 }
