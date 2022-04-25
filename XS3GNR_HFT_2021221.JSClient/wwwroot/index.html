@@ -8,12 +8,21 @@
 <body>
     <h1>Student Catalog</h1>
 
+    <div id="formdiv">
+        <label>Student Name</label>
+        <input type="text" id="studentname" />
+        <label>Student NeptunID</label>
+        <input type="text" id="studentneptun" />
+        <button type="button" onclick="create()">Add Student</button>
+    </div>
+
     <table>
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Name</th>
                 <th>NeptunID</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody id="resultarea">

@@ -27,4 +27,17 @@ td{
     background-color: lightcyan;
 }
 
+#formdiv{
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+#formdiv label,button,input{
+    margin: 5px;
+    padding: 5px;
+}
+
+
+
 
