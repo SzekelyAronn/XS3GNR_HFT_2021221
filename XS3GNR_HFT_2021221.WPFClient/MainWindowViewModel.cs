@@ -80,9 +80,9 @@ namespace XS3GNR_HFT_2021221.WPFClient
         public MainWindowViewModel()
         {
 
-            Students = new RestCollection<Student>("http://localhost:29075/", "student");
+            Students = new RestCollection<Student>("http://localhost:29075/", "student","hub");
 
-            Universities = new RestCollection<University>("http://localhost:29075/", "university");
+            Universities = new RestCollection<University>("http://localhost:29075/", "university","hub");
 
             createstudent = new RelayCommand(() => 
             {
